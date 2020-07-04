@@ -1,6 +1,6 @@
 # GMS2 Autotile Converter
 
-This is a script for Aseprite that will convert the RPG Maker "A2" style tilesets into an equivalent autotile sheet for GameMaker Studio 2. The script can generate both the 16 and 47 autotile formats. It also includes a preview function that allows you to see how the tileset will look directly in Aseprite without having to import into GameMaker Studio 2.
+This is a script for Aseprite that will convert the RPG Maker "A2" style tilesets into an equivalent autotile sheet for GameMaker Studio 2. The script can generate both the 16 and 47 autotile formats. It also includes a preview function that allows you to see how the tileset will look directly in Aseprite without having to import into GameMaker Studio 2. The script supports most of the features of Aseprite. You can build your tilesets on multiple layers, and the script will copy any layers that are currently set to visible into the final generated autotile sheet. You can also use Aseprite's animation functionality to store tilesets on multiple frames. The script will copy whatever frame you currently have selected.
 
 ## Requirements
 
@@ -30,3 +30,39 @@ You can use the script in two ways:
 2. If you have a tilesheet that contains multiple A2 tilesets, you can select the tileset using the Rectangular Marquee Tool (shortcut is **M**). Remember that you must select the exact tileset, if you miss it by one or two pixels, the dimensions will be incorrect. I recommend using the Grid settings in Aseprite. You can use **View -> Show -> Grid** to enable the grid, **View -> Grid -> Snap to Grid** to enable snapping, and **Grid -> Grid Settings** to change the grid size.
 
 Once you have the tileset selected, simply run the script using the keyboard shortcut you set or by going to **File -> Scripts -> GMS2 Autotile Converter**. If the script detects a valid A2 tileset, it will open a window with four buttons.
+
+![Dialog window](/images/dialog.png)
+
+### 16 Tilesheet
+
+This will generate a GMS2 16-tile autotile image. The sprite will open up in a new Aseprite tab, and you can save it to your computer as a PNG or whatever file type you choose. The 16-tile autotiles are best suited for natural terrain like grass and dirt.
+
+#### Special note about 16-tile autotile generation
+
+In GameMaker Studio 2, the last tile in the autotile set is expected to be the "solid" tile of the outer terrain surface. There is no way to generate this solid tile from the standard A2 tileset, as it only contains the complete tile information for the center terrain surface. As a workaround for this, I have repurposed the top left tile in the A2 tileset:
+
+![Top left tile labelled A](/images/top-left-tile-before.png)
+
+The tile labelled **A** is a part of every RPG Maker A2 tileset, but it is not actually used to generate tiles. Instead, it is used as an icon for representing the tileset in the RPG Maker engine. As such, it serves no purpose in a GMS2 tileset. We can replace the top left tile with the solid outer surface tile, and the script will automatically place it in the generated 16-tile autotile sheet. If you are using premade RPG Maker tilesheets, these solid tiles will almost always be provided somewhere else in the same sprite sheet. Once you replace the top left tile, the A2 tileset will look like this:
+
+![Top left tile replaced](/images/replace-top-left-tile.png)
+
+Generating the above A2 tileset results in the following GMS2 autotile sheet:
+
+![Generated 16 tilesheet](/images/generated-16-tile.png)
+
+You might notice there are actually 17 tiles, not 16. The tile labelled "A" is actually the closest thing to the "solid" outer tile we can achieve with the standard A2 tileset. This tile is included in the sheet on the rare occasion when you might want to use this tile instead, or if you don't have a solid tile to use. The tile labelled "B" is just the same top-left tile that we copied into the original A2 tileset. When you are importing this autotile sheet into GMS2, you can choose either A or B to use as the solid tile.
+
+### 47 Tilesheet
+
+This will generate a GMS2 47-tile autotile image. The sprite will open up in a new Aseprite tab, and you can save it to your computer as a PNG or whatever file type you choose. The 47-tile autotiles are best suited for structural features like walls, fences, holes, and bodies of water. Unlike the 16-tile generation, the 47-tile generation has no special cosiderations. The top-left tile is simply ignored in the original tileset. Generating the same A2 tileset from above will give use the following GMS2 tilesheet:
+
+![Generated 47 tilesheet](/images/generated-47-tile.png)
+
+### 16 Tile Preview and 47 Tile Preview
+
+The preview buttons will generate a pre-made map directly in Aseprite to give you an idea of what it will look like in GMS2. This is useful if you are designing your own A2 tilesets, so you don't have to constantly export from Aseprite and import into GMS2. The following image shows what the above A2 tileset looks like when prviewed in 16-tile and 47-tile respectively:
+
+![Previews](/images/previews.png)
+
+As you can see, this type of natural grass and dirt tile is much better suited to the 16-tile format. This is because the 47-tile format does not make use of the solid outer tiles like the 16-tile does. However, you can take advantage of tile layers in GMS2 to make 47-tile look great as well. Just place a layer of all grass underneath the 47-tile layer. By doing this, you get the increased flexibility of the 47-tile autotile while also retaining a more natural look.
