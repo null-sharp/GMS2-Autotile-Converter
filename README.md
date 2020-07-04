@@ -21,7 +21,11 @@ This script expects the tileset to be formatted in the RPG Maker A2 tile format.
 
 If you are interested in making your own A2 tilesets, I would recommend this YouTube series by CrackedRabbitGaming ([Part 1](https://www.youtube.com/watch?v=nvdf6SM0N0k), [Part 2](https://www.youtube.com/watch?v=2A2S_fc-UR8), [Part 3](https://www.youtube.com/watch?v=16Te4ESqYWI)). You can also Google "RPG Maker A2 tiles" to get ideas for the different kinds of things you can make with autotiles. Just be careful to not use any official RPG Maker tiles in your GameMaker Studio 2 games, as they are only licensed for use in RPG Maker.
 
-There are plenty of independent artists that sell RPG Maker formatted tilesets that are able to be used in any game engine. Personally, I am a big fan of [finalbossblues](https://finalbossblues.itch.io/). [MalibuDarby](https://malibudarby.itch.io/) also has some really nice looking tilesets.
+There are plenty of independent artists that sell RPG Maker formatted tilesets that are able to be used in any game engine. Personally, I am a big fan of [finalbossblues](https://finalbossblues.itch.io/). [MalibuDarby](https://malibudarby.itch.io/) also has some really nice looking tilesets. If you search for the [RPG Maker tag on itch.io](https://itch.io/game-assets/tag-rpgmaker) you can find lots of assets.
+
+### Special note about RPG Maker tilesheets
+
+Different versions of RPG Maker expect specific tile sizes. However, if the artist is making a pixel art tileset, they will upscale the tiles to match the RPG Maker tile size. You can tell if the sprites are upscaled if 1 pixel is actually made up of 4, 9, or 16 pixels. Usually you will not want to use these upscaled sprites, but instead scale them back down to the original tile size. This will drastically shrink your generated autotile sheets and save on graphics memory. You can do this in Aseprite by going to **Sprite -> Sprite Size**. If 1px=4px, scale down to 50%. If 1px=9px scale down to 33.3333%. If 1px=16px scale down to 25%. As long as you use nearest-neighbor interpolation, the sprite will look identical to the upscaled version.
 
 ## Usage
 
@@ -61,11 +65,11 @@ This will generate a GMS2 47-tile autotile image. The sprite will open up in a n
 
 ### 16 Tile Preview and 47 Tile Preview
 
-The preview buttons will generate a pre-made map directly in Aseprite to give you an idea of what it will look like in GMS2. This is useful if you are designing your own A2 tilesets, so you don't have to constantly export from Aseprite and import into GMS2. The following image shows what the above A2 tileset looks like when prviewed in 16-tile and 47-tile respectively:
+The preview buttons will generate a pre-made map directly in Aseprite to give you an idea of what it will look like in GMS2. This is useful if you are designing your own A2 tilesets, so you don't have to constantly export from Aseprite and import into GMS2. The following image shows what the above A2 tileset looks like when previewed in 16-tile and 47-tile respectively:
 
 ![Previews](/images/previews.png)
 
-As you can see, this type of natural grass and dirt tile is much better suited to the 16-tile format. This is because the 47-tile format does not make use of the solid outer tiles like the 16-tile does. However, you can take advantage of tile layers in GMS2 to make 47-tile look great as well. Just place a layer of all grass underneath the 47-tile layer. By doing this, you get the increased flexibility of the 47-tile autotile while also retaining a more natural look.
+As you can see, this type of natural grass and dirt tile is much better suited to the 16-tile format. This is because the 47-tile format does not make use of the solid outer tiles like the 16-tile does. You can also see that the 47-tile autotile is able to create paths that are one tile wide, while the 16-tile autotile can only create paths that are two tiles wide or greater. However, you can take advantage of tile layers in GMS2 to make 47-tile look great with this tileset. Just place a layer of all grass underneath the 47-tile layer. By doing this, you get the increased flexibility of the 47-tile autotile while also retaining a more natural look.
 
 ## Importing to GMS2
 
