@@ -1,6 +1,6 @@
 # GMS2 Autotile Converter
 
-This is a script for Aseprite that will convert the RPG Maker "A2" style tilesets into an equivalent autotile sheet for GameMaker Studio 2. The script can generate both the 16 and 47 autotile formats. It also includes a preview function that allows you to see how the tileset will look directly in Aseprite without having to import into GameMaker Studio 2. The script supports most of the features of Aseprite. You can build your tilesets on multiple layers, and the script will copy any layers that are currently set to visible into the final generated autotile sheet. You can also use Aseprite's animation functionality to store tilesets on multiple frames. The script will copy whatever frame you currently have selected.
+This is a script for Aseprite that will convert the RPG Maker "A2" style tilesets into an equivalent autotile sheet for GameMaker Studio 2. The script can generate both the 16 and 47 autotile formats. It also includes a preview function that allows you to see how the tileset will look directly in Aseprite without having to import into GameMaker Studio 2. The script supports most of the features of Aseprite. You can build your tilesets on multiple layers, and the script will copy any layers that are currently set to visible into the final generated autotile sheet. You can also use Aseprite's animation functionality to store tilesets in multiple frames. The script will copy whatever frame you currently have selected.
 
 ## Requirements
 
@@ -29,7 +29,7 @@ You can use the script in two ways:
 1. Simply open a single A2 formatted sprite, or create one yourself. The dimensions of the sprite must be two tiles wide and three tiles tall. In other words, the sprite height divided by the sprite width must be **1.5**. If it is not the correct dimensions, the script will give you an error and refuse to run.
 2. If you have a tilesheet that contains multiple A2 tilesets, you can select the tileset using the Rectangular Marquee Tool (shortcut is **M**). Remember that you must select the exact tileset, if you miss it by one or two pixels, the dimensions will be incorrect. I recommend using the Grid settings in Aseprite. You can use **View -> Show -> Grid** to enable the grid, **View -> Grid -> Snap to Grid** to enable snapping, and **Grid -> Grid Settings** to change the grid size.
 
-Once you have the tileset selected, simply run the script using the keyboard shortcut you set or by going to **File -> Scripts -> GMS2 Autotile Converter**. If the script detects a valid A2 tileset, it will open a window with four buttons.
+Once you have the tileset opened or selected, simply run the script using the keyboard shortcut you set earlier or by going to **File -> Scripts -> GMS2 Autotile Converter**. If the script detects a valid A2 tileset, it will open a window with four buttons.
 
 ![Dialog window](/images/dialog.png)
 
@@ -55,7 +55,7 @@ You might notice there are actually 17 tiles, not 16. The tile labelled "A" is a
 
 ### 47 Tilesheet
 
-This will generate a GMS2 47-tile autotile image. The sprite will open up in a new Aseprite tab, and you can save it to your computer as a PNG or whatever file type you choose. The 47-tile autotiles are best suited for structural features like walls, fences, holes, and bodies of water. Unlike the 16-tile generation, the 47-tile generation has no special cosiderations. The top-left tile is simply ignored in the original tileset. Generating the same A2 tileset from above will give use the following GMS2 tilesheet:
+This will generate a GMS2 47-tile autotile image. The sprite will open up in a new Aseprite tab, and you can save it to your computer as a PNG or whatever file type you choose. The 47-tile autotiles are best suited for structural features like walls, fences, holes, and bodies of water. Unlike the 16-tile generation, the 47-tile generation has no special considerations. The top-left tile is simply ignored in the original tileset. Generating the same A2 tileset from above will give use the following GMS2 tilesheet:
 
 ![Generated 47 tilesheet](/images/generated-47-tile.png)
 
