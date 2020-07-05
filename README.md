@@ -89,6 +89,6 @@ Transparency also works in the opposite way, where the inner terrain is transpar
 
 ![Roof](/images/roof.png)
 
-With a little big of trickery you can make things like fences as well.
+With a little bit of trickery you can make things like fences as well.
 
 ![Fences](/images/fences.png)
