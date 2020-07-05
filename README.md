@@ -65,7 +65,7 @@ This will generate a GMS2 47-tile autotile image. The sprite will open up in a n
 
 ### 16 Tile Preview and 47 Tile Preview
 
-The preview buttons will generate a pre-made map directly in Aseprite to give you an idea of what it will look like in GMS2. This is useful if you are designing your own A2 tilesets, so you don't have to constantly export from Aseprite and import into GMS2. The following image shows what the above A2 tileset looks like when previewed in 16-tile and 47-tile respectively:
+The preview buttons will generate a pre-made map directly in Aseprite to give you an idea of what it will look like in GMS2. This is useful if you are designing your own A2 tilesets, so you don't have to constantly export from Aseprite and import into GMS2. Keep in mind that the 16-tile preview will use the top-left tile as the solid outer tile. If you don't have a solid outer tile in the top left corner of the origial tileset, the 16-tile preview might look weird. The following image shows what the above A2 tileset looks like when previewed in 16-tile and 47-tile respectively:
 
 ![Previews](/images/previews.png)
 
@@ -85,7 +85,7 @@ Rather than always having a tileset that goes from one terrain type to another, 
 
 ![Holes](/images/holes.png)
 
-Transparency also works in the opposite way, where the inner terrain is transparent. This can be useful for creating reusable walls, fences, or rooftops edges.
+Transparency also works in the opposite way, where the inner terrain is transparent. This can be useful for creating reusable walls or rooftops edges.
 
 ![Roof](/images/roof.png)
 
