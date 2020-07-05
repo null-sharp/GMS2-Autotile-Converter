@@ -77,7 +77,7 @@ Once you generate the tileset and save it to your computer, you just have to imp
 
 Rather than go into detail about using autotiles in GMS2, I will just link [this video that explains it well](https://www.youtube.com/watch?v=JRb4_GzF95k).
 
-## Other Notes
+## Using Transparency
 
 Rather than always having a tileset that goes from one terrain type to another, you can use transparency to make your tilesets more reusable. You can use multiple tile layers in GMS2 to stack the transparent layers on top. For example, these two tilesets do not have an outer terrain type. They would work with both 16-tile and 47-tile formats, depending on if you want one tile width paths or two tile width paths.
 
